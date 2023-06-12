@@ -1,5 +1,4 @@
 import process from 'process';
-import ansiColors from 'ansi-colors';
 import { RollupOptions, rollup, OutputOptions } from 'rollup';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
@@ -24,11 +23,6 @@ async function _build() {
       typescript({
         tsconfig: `packages/${process.env.project}/tsconfig.json`,
       }),
-      /** @TODO esbuild 会导致无法识别 tsconfig 里的 path: https://github.com/egoist/rollup-plugin-esbuild/issues/70 感觉可以自己写个插件去支持, 应该不难 */
-      // esbuild({
-      //   charset: 'utf8',
-      //   tsconfig: `./packages/${process.env.project}/tsconfig.json`,
-      // }),
     ],
     external: ['axios-esm', 'lodash-es'],
   }

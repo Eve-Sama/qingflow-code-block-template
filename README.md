@@ -221,6 +221,11 @@ const urlPrefix = mode === 'development' ? '/api.qingflow.com' : 'https://api.qi
 const url = `${urlPrefix}/app/c5e02ab7/apply/filter`;
 ```
 
+### 目录结构有什么要注意的吗?
+
+每个项目必须存在`src/index.ts`这个文件, 这也是打包的入口. 其他的可以任意设计, 比如在`src`下面添加`bussiness`、`request`文件夹之类的, 都是可以的.
+
+
 ## 特别感谢
 
 QCBT是在长期的代码块业务中迭代出来的, 已服务于轻流内部多个代码块场景. 特别感谢 [aimerthyr](https://github.com/aimerthyr) 同学对于QCBT的构建、工程化等方面的卓越贡献!
