@@ -225,6 +225,9 @@ const url = `${urlPrefix}/app/c5e02ab7/apply/filter`;
 
 每个项目必须存在`src/index.ts`这个文件, 这也是打包的入口. 其他的可以任意设计, 比如在`src`下面添加`bussiness`、`request`文件夹之类的, 都是可以的.
 
+### 我可以引用第三方包吗?
+
+代码块内置了lodash和axios包, 但是需要注意, 在QCBT的环境下开发, 需要使用esm的包, 也就是lodash-es和axios-esm这2个包. 至于其他的包, 也是可以使用的, 但是因为并非轻流代码块内置的包, 因此构建出来的js会按依赖查找把第三方也打包进来.
 
 ## 特别感谢
 
